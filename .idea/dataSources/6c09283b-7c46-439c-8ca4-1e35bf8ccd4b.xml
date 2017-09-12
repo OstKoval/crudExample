@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="websystique@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.0">
+    <root id="1"/>
+    <schema id="2" parent="1" name="websystique">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="information_schema"/>
+    <schema id="4" parent="1" name="mysql"/>
+    <schema id="5" parent="1" name="performance_schema"/>
+    <schema id="6" parent="1" name="ShopDB"/>
+    <schema id="7" parent="1" name="ShopDBNew"/>
+    <schema id="8" parent="1" name="studentEnrollment"/>
+    <schema id="9" parent="1" name="sys"/>
+    <table id="10" parent="2" name="APP_USER"/>
+    <table id="11" parent="2" name="APP_USER_USER_PROFILE"/>
+    <table id="12" parent="2" name="PERSISTENT_LOGINS"/>
+    <table id="13" parent="2" name="USER_PROFILE"/>
+    <column id="14" parent="10" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="15" parent="10" name="EMAIL">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="16" parent="10" name="FIRST_NAME">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="17" parent="10" name="LAST_NAME">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="18" parent="10" name="PASSWORD">
+      <Position>5</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="19" parent="10" name="SSO_ID">
+      <Position>6</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="20" parent="10" name="UK_hqk6uc88j3imq8u9jhro36vt3">
+      <ColNames>SSO_ID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="21" parent="10" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="22" parent="10" name="UK_hqk6uc88j3imq8u9jhro36vt3">
+      <ColNames>SSO_ID</ColNames>
+      <UnderlyingIndexName>UK_hqk6uc88j3imq8u9jhro36vt3</UnderlyingIndexName>
+    </key>
+    <column id="23" parent="11" name="USER_ID">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="24" parent="11" name="USER_PROFILE_ID">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="25" parent="11" name="FK_gs2lq4vmukguubh36utd4r2cl">
+      <ColNames>USER_PROFILE_ID</ColNames>
+    </index>
+    <key id="26" parent="11" name="PRIMARY">
+      <ColNames>USER_ID
+USER_PROFILE_ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="27" parent="11" name="FK_brmce0t584euix4wb4rursf1q">
+      <ColNames>USER_ID</ColNames>
+      <RefSchemaName>websystique</RefSchemaName>
+      <RefTableName>APP_USER</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="28" parent="11" name="FK_gs2lq4vmukguubh36utd4r2cl">
+      <ColNames>USER_PROFILE_ID</ColNames>
+      <RefSchemaName>websystique</RefSchemaName>
+      <RefTableName>USER_PROFILE</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="29" parent="12" name="series">
+      <Position>1</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="30" parent="12" name="last_used">
+      <Position>2</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="31" parent="12" name="TOKEN">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="32" parent="12" name="USERNAME">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="33" parent="12" name="UK_3gq9wkitbp2ave684iu50mhn7">
+      <ColNames>TOKEN</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="34" parent="12" name="UK_a6c251uovnx2cp2c3vv2dentk">
+      <ColNames>USERNAME</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="35" parent="12" name="PRIMARY">
+      <ColNames>series</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="36" parent="12" name="UK_3gq9wkitbp2ave684iu50mhn7">
+      <ColNames>TOKEN</ColNames>
+      <UnderlyingIndexName>UK_3gq9wkitbp2ave684iu50mhn7</UnderlyingIndexName>
+    </key>
+    <key id="37" parent="12" name="UK_a6c251uovnx2cp2c3vv2dentk">
+      <ColNames>USERNAME</ColNames>
+      <UnderlyingIndexName>UK_a6c251uovnx2cp2c3vv2dentk</UnderlyingIndexName>
+    </key>
+    <column id="38" parent="13" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="39" parent="13" name="TYPE">
+      <Position>2</Position>
+      <DataType>varchar(15)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="40" parent="13" name="UK_cva7m2blp7ekclxworqxau1l7">
+      <ColNames>TYPE</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="41" parent="13" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="42" parent="13" name="UK_cva7m2blp7ekclxworqxau1l7">
+      <ColNames>TYPE</ColNames>
+      <UnderlyingIndexName>UK_cva7m2blp7ekclxworqxau1l7</UnderlyingIndexName>
+    </key>
+  </database-model>
+</dataSource>
